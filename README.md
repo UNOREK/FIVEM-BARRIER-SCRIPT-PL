@@ -1,5 +1,5 @@
  Checkpoint Barrier System — FiveM Vanilla
-A dynamic barrier system with teleportation, vehicle spawning, and checkpoint handling — built for training, testing, or event scenarios within the QBCore framework. Minimal interface, maximum utility.
+A dynamic barrier system with teleportation, vehicle spawning, and checkpoint handling — built for training, testing, or event scenarios within the Vanilla/Qb-core. Minimal interface, maximum utility.
 
  Features
 - /bariera command — activates a forward-facing barrier based on player position.
