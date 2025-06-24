@@ -18,7 +18,7 @@ A dynamic barrier system with teleportation, vehicle spawning, and checkpoint ha
 In-Game Usage
  Action  Command / Key 
  Set a checkpoint  "C "
- Teleport to checkpoint  "."
+ Teleport to checkpoint  "e"
  Reset all checkpoints  "/checkreset"
  Activate the barier  "/startbariera"
  View barrier status  "/barierastatus"
