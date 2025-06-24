@@ -1,4 +1,4 @@
- Checkpoint Barrier System — FiveM/QBCore
+ Checkpoint Barrier System — FiveM Vanilla
 A dynamic barrier system with teleportation, vehicle spawning, and checkpoint handling — built for training, testing, or event scenarios within the QBCore framework. Minimal interface, maximum utility.
 
  Features
