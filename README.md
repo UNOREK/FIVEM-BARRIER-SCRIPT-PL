@@ -1,5 +1,9 @@
+PL version
+
  Checkpoint Barrier System — FiveM Vanilla
-A dynamic barrier system with teleportation, vehicle spawning, and checkpoint handling — built for training, testing, or event scenarios within the Vanilla. Minimal interface, maximum utility.
+A dynamic barrier system with teleportation, vehicle spawning, and checkpoint handling — built for training, testing, or event scenarios within the Vanilla. 
+Minimal interface, maximum utility.
+
 
  Features
 - command — activates a forward-facing barrier based on player position.
@@ -13,7 +17,7 @@ A dynamic barrier system with teleportation, vehicle spawning, and checkpoint ha
  Installation
 - Download or clone this resource into your resources/[local]/ folder.
 - Ensure you have the shinobi vehicle available on the server.
-- In your server.cfg, add the line: "ensure FIVEM-BARRIER-SCRIPT-PL".
+- In your server.cfg, add the line: "ensure un_FIVEM-BARRIER-SCRIPT".
 
 In-Game Usage
  Action  Command / Key 
