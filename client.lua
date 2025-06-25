@@ -26,9 +26,9 @@ Citizen.CreateThread(function()
             })
 
             TriggerEvent("chat:addMessage", {
-                color = {255, 100, 0},
+                color = {0, 255, 100},
                 multiline = false,
-                args = {"^4SYSTEM", "Checkpoint #" .. checkpointCount .. " ustawiony."}
+                args = {"^2SYSTEM", "Checkpoint #" .. checkpointCount .. " ustawiony."}
             })
         end
     end
@@ -67,9 +67,9 @@ RegisterCommand("checkreset", function()
     checkpointCount = 0
     initialCheckpointSet = false
     TriggerEvent("chat:addMessage", {
-        color = {255, 0, 0},
+        color = {0, 255, 100},
         multiline = false,
-        args = {"^1SYSTEM", "Checkpoint zresetowany. Licznik wyzerowany."}
+        args = {"^2SYSTEM", "Checkpoint zresetowany. Licznik wyzerowany."}
     })
 end)
 
