@@ -12,18 +12,10 @@ local initialCheckpointSet = false
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
-        if IsControlJustPressed(0, 26) then
+        if barieraActive and IsControlJustPressed(0, 26) then
             checkpoint = GetEntityCoords(PlayerPedId())
             checkpointCount = checkpointCount + 1
             initialCheckpointSet = false
-
-            SendNUIMessage({
-                type = "checkpoint",
-                id = checkpointCount,
-                x = checkpoint.x,
-                y = checkpoint.y,
-                z = checkpoint.z
-            })
 
             TriggerEvent("chat:addMessage", {
                 color = {0, 255, 100},
@@ -37,40 +29,29 @@ end)
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
-        if IsControlJustPressed(0, 206) and checkpoint then
-            local ped = PlayerPedId()
-            SetEntityCoords(ped, checkpoint.x, checkpoint.y, checkpoint.z)
+        if IsControlJustPressed(0, 206) then
+            if barieraActive and checkpointCount > 0 and checkpoint ~= nil then
+                local ped = PlayerPedId()
+                SetEntityCoords(ped, checkpoint.x, checkpoint.y, checkpoint.z)
 
-            local hash = GetHashKey(vehicleModel)
-            RequestModel(hash)
-            while not HasModelLoaded(hash) do
-                Citizen.Wait(100)
+                local hash = GetHashKey(vehicleModel)
+                RequestModel(hash)
+                while not HasModelLoaded(hash) do
+                    Citizen.Wait(100)
+                end
+
+                local veh = CreateVehicle(hash, checkpoint.x, checkpoint.y, checkpoint.z, GetEntityHeading(ped), true, false)
+                SetPedIntoVehicle(ped, veh, -1)
+                SetModelAsNoLongerNeeded(hash)
+            else
+                TriggerEvent("chat:addMessage", {
+                    color = {255, 50, 50},
+                    multiline = false,
+                    args = {"^1SYSTEM", "Cofnięcie niemożliwe – brak aktywnego checkpointa lub bariera jest wyłączona."}
+                })
             end
-
-            local veh = CreateVehicle(hash, checkpoint.x, checkpoint.y, checkpoint.z, GetEntityHeading(ped), true, false)
-            SetPedIntoVehicle(ped, veh, -1)
-            SetModelAsNoLongerNeeded(hash)
-
-            SendNUIMessage({
-                type = "checkpoint",
-                id = checkpointCount,
-                x = checkpoint.x,
-                y = checkpoint.y,
-                z = checkpoint.z
-            })
         end
     end
-end)
-
-RegisterCommand("checkreset", function()
-    checkpoint = nil
-    checkpointCount = 0
-    initialCheckpointSet = false
-    TriggerEvent("chat:addMessage", {
-        color = {0, 255, 100},
-        multiline = false,
-        args = {"^2SYSTEM", "Checkpoint zresetowany. Licznik wyzerowany."}
-    })
 end)
 
 RegisterNetEvent("bariera:start")
@@ -99,6 +80,19 @@ AddEventHandler("bariera:getPlayerCoords", function()
     end
 
     TriggerServerEvent("bariera:setStart", pos, dir)
+end)
+
+RegisterNetEvent("bariera:resetCheckpoint")
+AddEventHandler("bariera:resetCheckpoint", function()
+    checkpoint = nil
+    checkpointCount = 0
+    initialCheckpointSet = false
+
+    TriggerEvent("chat:addMessage", {
+        color = {0, 255, 100},
+        multiline = false,
+        args = {"^2SYSTEM", "Checkpoint zresetowany. Licznik wyzerowany."}
+    })
 end)
 
 Citizen.CreateThread(function()
