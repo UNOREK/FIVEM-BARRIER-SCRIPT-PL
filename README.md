@@ -15,9 +15,8 @@ Funkcje:
 
 Instalacja:
 - Umieść folder zasobu w resources/[local]/
-- Upewnij się, że model pojazdu shinobi jest dostępny na serwerze
 - Dodaj linię do pliku server.cfg:
-- ensure un_FIVEM-BARRIER-SCRIPT
+ ensure un_FIVEM-BARRIER-SCRIPT
 
 Komendy i klawisze:
 - C — ustawienie checkpointa
