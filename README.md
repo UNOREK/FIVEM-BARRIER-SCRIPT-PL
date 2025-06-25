@@ -7,8 +7,8 @@ Funkcje:
 - Bariera aktywowana komendą /startbariera — ustawiana w pozycji i kierunku gracza
 - Teleportacja gracza do checkpointa przy przekroczeniu granicy
 - Automatyczne generowanie pojazdu "shinobi" po teleportacji
-- Ustawianie checkpointów za pomocą klawisza C (do 10 punktów)
-- Teleportacja do ostatniego checkpointa po naciśnięciu . (kropki)
+- Ustawianie checkpointów za pomocą klawisza C
+- Teleportacja do ostatniego checkpointa po naciśnięciu E
 - Wizualizacja bariery liniami świetlnymi
 - Komunikaty systemowe na czacie (checkpointy, aktywacja, reset, itd.)
 - Działa bez ESX, QBCore i innych frameworków (czysty FiveM)
