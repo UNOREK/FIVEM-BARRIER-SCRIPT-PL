@@ -16,6 +16,7 @@ Komendy i klawisze:
 - /stopbariera — dezaktywacja bariery
 - /barierastatus — sprawdzenie statusu (jeśli zaimplementowane)
 
-Autorzy: COMAR & UNOREK
 INSPIROWANE SERIĄ KALUCHA "GTA V BARIERA"
+Autorzy: COMAR & UNOREK
+
 
