@@ -19,7 +19,8 @@ Instalacja:
 - Dodaj linię do pliku server.cfg:
 - ensure un_FIVEM-BARRIER-SCRIPT
 
-Komendy i klawisze:- C — ustawienie checkpointa
+Komendy i klawisze:
+- C — ustawienie checkpointa
 - E — teleportacja do checkpointa
 - /checkreset — resetowanie checkpointów
 - /startbariera — aktywacja bariery
