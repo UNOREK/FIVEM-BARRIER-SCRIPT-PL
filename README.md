@@ -1,43 +1,27 @@
-Skrypt jest w języku Polskim.
+Bariera – system checkpointów i granicy (FiveM Vanilla)
+System do wyznaczania granic i cofania gracza po ich przekroczeniu. Umożliwia ustawianie własnych checkpointów, teleportację, automatyczne pojazdy i więcej — bez żadnych frameworków.
 
- Checkpoint Barrier System — FiveM Vanilla
-A dynamic barrier system with teleportation, vehicle spawning, and checkpoint handling — built for training, testing, or event scenarios within the Vanilla. 
-Minimal interface, maximum utility.
+Funkcje:
+- Bariera aktywowana komendą /startbariera — ustawiana w pozycji i kierunku gracza
+- Teleportacja gracza do checkpointa przy przekroczeniu granicy
+- Automatyczne generowanie pojazdu "shinobi" po teleportacji
+- Ustawianie checkpointów za pomocą klawisza C (do 10 punktów)
+- Teleportacja do ostatniego checkpointa po naciśnięciu . (kropki)
+- Wizualizacja bariery liniami świetlnymi
+- Komunikaty systemowe na czacie (checkpointy, aktywacja, reset, itd.)
+- Działa bez ESX, QBCore i innych frameworków (czysty FiveM)
 
+Instalacja:
+- Umieść folder zasobu w resources/[local]/
+- Upewnij się, że model pojazdu shinobi jest dostępny na serwerze
+- Dodaj linię do pliku server.cfg:
+- ensure un_FIVEM-BARRIER-SCRIPT
 
- Features
-- command — activates a forward-facing barrier based on player position.
-- Set up to 10 checkpoints using the C key.
-- Instant teleportation to the checkpoint with a shinobi vehicle by pressing . (dot).
-- Automatic teleport and respawn on vehicle when crossing the barrier.
-- Visual lines and minimap blips marking the barrier.
-- Live checkpoint counter with flashing warning indicator.
-- Automatic cleanup of previously spawned vehicles (no clutter!).
+Komendy i klawisze:- C — ustawienie checkpointa
+- E — teleportacja do checkpointa
+- /checkreset — resetowanie checkpointów
+- /startbariera — aktywacja bariery
+- /stopbariera — dezaktywacja bariery
+- /barierastatus — sprawdzenie statusu (jeśli zaimplementowane)
 
- Installation
-- Download or clone this resource into your resources/[local]/ folder.
-- Ensure you have the shinobi vehicle available on the server.
-- In your server.cfg, add the line: "ensure un_FIVEM-BARRIER-SCRIPT".
-
-In-Game Usage
- Action  Command / Key 
-
- - Set a checkpoint  "C ".
- 
- - Teleport to checkpoint  "e".
-
- - Reset all checkpoints  "/checkreset".
- 
- - Activate the barier  "/startbariera".
- 
- - View barrier status  "/barierastatus".
- 
- - Manually stop barrier  "/stopbariera".
-
- AUTHORS: COMAR & UNOREK
- 
- INSPIROWANE SERIĄ KALUCHA "GTA V BARIERA"
-
-
-
-
+Autorzy: COMAR & UNOREK
