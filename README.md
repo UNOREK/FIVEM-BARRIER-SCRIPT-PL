@@ -1,6 +1,8 @@
 Bariera – system checkpointów i granicy (FiveM Vanilla)
 System do wyznaczania granic i cofania gracza po ich przekroczeniu. Umożliwia ustawianie własnych checkpointów, teleportację, automatyczne pojazdy i więcej — bez żadnych frameworków.
 
+Skrypt w języku Polskim.
+
 Funkcje:
 - Bariera aktywowana komendą /startbariera — ustawiana w pozycji i kierunku gracza
 - Teleportacja gracza do checkpointa przy przekroczeniu granicy
