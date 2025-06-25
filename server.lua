@@ -13,7 +13,13 @@ RegisterCommand("stopbariera", function(source)
     barieraStart = nil
     barieraDir = nil
     TriggerClientEvent("bariera:stop", -1)
-    TriggerClientEvent("chat:addMessage", -1, { args = { "^1Bariera została wyłączona!" } })
+
+    TriggerClientEvent("chat:addMessage", -1, {
+        color = {255, 50, 50},
+        multiline = false,
+        args = {"^1SYSTEM", "Bariera została wyłączona."}
+    })
+
     print("Stopbariera command od gracza ID: " .. tostring(source))
 end)
 
@@ -23,6 +29,12 @@ AddEventHandler("bariera:setStart", function(pos, dir)
     barieraStart = pos
     barieraDir = dir
     TriggerClientEvent("bariera:start", -1, barieraStart, barieraDir)
-    TriggerClientEvent("chat:addMessage", -1, { args = { "^6Bariera została uruchomiona globalnie!" } })
+
+    TriggerClientEvent("chat:addMessage", -1, {
+        color = {180, 0, 255},
+        multiline = false,
+        args = {"^6SYSTEM", "Bariera została aktywowana."}
+    })
+
     print("Bariera globalnie ustawiona")
 end)
