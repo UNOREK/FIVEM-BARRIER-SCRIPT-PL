@@ -2,7 +2,7 @@
 A dynamic barrier system with teleportation, vehicle spawning, and checkpoint handling — built for training, testing, or event scenarios within the Vanilla. Minimal interface, maximum utility.
 
  Features
-- /startbariera command — activates a forward-facing barrier based on player position.
+- command — activates a forward-facing barrier based on player position.
 - Set up to 10 checkpoints using the C key.
 - Instant teleportation to the checkpoint with a shinobi vehicle by pressing . (dot).
 - Automatic teleport and respawn on vehicle when crossing the barrier.
