@@ -3,16 +3,6 @@ System do wyznaczania granic i cofania gracza po ich przekroczeniu. Umożliwia u
 
 Skrypt w języku Polskim.
 
-Funkcje:
-- Bariera aktywowana komendą /startbariera — ustawiana w pozycji i kierunku gracza
-- Teleportacja gracza do checkpointa przy przekroczeniu granicy
-- Automatyczne generowanie pojazdu "shinobi" po teleportacji
-- Ustawianie checkpointów za pomocą klawisza C
-- Teleportacja do ostatniego checkpointa po naciśnięciu E
-- Wizualizacja bariery liniami świetlnymi
-- Komunikaty systemowe na czacie (checkpointy, aktywacja, reset, itd.)
-- Działa bez ESX, QBCore i innych frameworków (czysty FiveM)
-
 Instalacja:
 - Umieść folder zasobu w resources/[local]/
 - Dodaj linię do pliku server.cfg:
@@ -28,3 +18,4 @@ Komendy i klawisze:
 
 Autorzy: COMAR & UNOREK
 INSPIROWANE SERIĄ KALUCHA "GTA V BARIERA"
+
