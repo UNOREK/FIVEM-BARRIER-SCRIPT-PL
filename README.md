@@ -1,4 +1,4 @@
-PL version
+Skrypt jest w języku Polskim.
 
  Checkpoint Barrier System — FiveM Vanilla
 A dynamic barrier system with teleportation, vehicle spawning, and checkpoint handling — built for training, testing, or event scenarios within the Vanilla. 
