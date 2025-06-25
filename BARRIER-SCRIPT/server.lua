@@ -4,7 +4,6 @@ local barieraDir = nil
 
 RegisterCommand("startbariera", function(source)
     local _source = source
-    -- Wyślij event do klienta, który wywołał komendę, aby podał pozycję i kierunek
     TriggerClientEvent("bariera:getPlayerCoords", _source)
     print("Startbariera command od gracza ID: " .. tostring(_source))
 end)
@@ -18,7 +17,6 @@ RegisterCommand("stopbariera", function(source)
     print("Stopbariera command od gracza ID: " .. tostring(source))
 end)
 
--- Event odbierający pozycję i kierunek od klienta wywołującego startbariera
 RegisterNetEvent("bariera:setStart")
 AddEventHandler("bariera:setStart", function(pos, dir)
     barieraActive = true
