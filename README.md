@@ -14,9 +14,8 @@ Komendy i klawisze:
 - /checkreset — resetowanie checkpointów
 - /startbariera — aktywacja bariery
 - /stopbariera — dezaktywacja bariery
-- /barierastatus — sprawdzenie statusu (jeśli zaimplementowane)
-
-INSPIROWANE SERIĄ KALUCHA "GTA V BARIERA"
+  
 Autorzy: COMAR & UNOREK
+INSPIROWANE SERIĄ KALUCHA "GTA V BARIERA"
 
 
