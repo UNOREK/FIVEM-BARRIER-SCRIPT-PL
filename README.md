@@ -16,7 +16,7 @@ Funkcje:
 Instalacja:
 - Umieść folder zasobu w resources/[local]/
 - Dodaj linię do pliku server.cfg:
- ensure un_FIVEM-BARRIER-SCRIPT
+ ensure un2_FIVEM-BARRIER-SCRIPT
 
 Komendy i klawisze:
 - C — ustawienie checkpointa
