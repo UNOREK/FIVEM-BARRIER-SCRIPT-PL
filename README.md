@@ -13,7 +13,7 @@ A dynamic barrier system with teleportation, vehicle spawning, and checkpoint ha
  Installation
 - Download or clone this resource into your resources/[local]/ folder.
 - Ensure you have the shinobi vehicle available on the server.
-- In your server.cfg, add the line: "ensure BARRIER-SCRIPT".
+- In your server.cfg, add the line: "ensure FIVEM-BARRIER-SCRIPT-PL".
 
 In-Game Usage
  Action  Command / Key 
