@@ -38,3 +38,8 @@ AddEventHandler("bariera:setStart", function(pos, dir)
 
     print("Bariera globalnie ustawiona")
 end)
+
+RegisterCommand("checkreset", function(source)
+    TriggerClientEvent("bariera:resetCheckpoint", source)
+    print("Gracz ID " .. tostring(source) .. " zresetował swój checkpoint.")
+end)
