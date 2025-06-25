@@ -7,14 +7,15 @@ local barieraLength = 50000.0
 local checkpoint = nil
 local checkpointCount = 0
 local vehicleModel = "shinobi"
+local initialCheckpointSet = false
 
--- Ustaw checkpoint pod przyciskiem C
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
-        if IsControlJustPressed(0, 26) then -- C
+        if IsControlJustPressed(0, 26) then
             checkpoint = GetEntityCoords(PlayerPedId())
             checkpointCount = checkpointCount + 1
+            initialCheckpointSet = false
 
             SendNUIMessage({
                 type = "checkpoint",
@@ -23,15 +24,18 @@ Citizen.CreateThread(function()
                 y = checkpoint.y,
                 z = checkpoint.z
             })
+
+            TriggerEvent("chat:addMessage", {
+                args = { "^3Checkpoint #" .. checkpointCount .. " ustawiony." }
+            })
         end
     end
 end)
 
-
 Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
-        if IsControlJustPressed(0, 206) and checkpoint then -- "."
+        if IsControlJustPressed(0, 206) and checkpoint then
             local ped = PlayerPedId()
             SetEntityCoords(ped, checkpoint.x, checkpoint.y, checkpoint.z)
 
@@ -56,14 +60,13 @@ Citizen.CreateThread(function()
     end
 end)
 
-
 RegisterCommand("checkreset", function()
     checkpoint = nil
     checkpointCount = 0
+    initialCheckpointSet = false
     TriggerEvent("chat:addMessage", { args = { "^1Checkpoint zresetowany! Licznik wyzerowany." } })
 end)
 
--- Eventy z serwera
 RegisterNetEvent("bariera:start")
 AddEventHandler("bariera:start", function(startPos, direction)
     barieraActive = true
@@ -83,9 +86,14 @@ AddEventHandler("bariera:getPlayerCoords", function()
     local ped = PlayerPedId()
     local pos = GetEntityCoords(ped)
     local dir = GetEntityForwardVector(ped)
+
+    if not initialCheckpointSet then
+        checkpoint = pos
+        initialCheckpointSet = true
+    end
+
     TriggerServerEvent("bariera:setStart", pos, dir)
 end)
-
 
 Citizen.CreateThread(function()
     while true do
@@ -111,13 +119,10 @@ Citizen.CreateThread(function()
                 local veh = CreateVehicle(hash, checkpoint.x, checkpoint.y, checkpoint.z, GetEntityHeading(ped), true, false)
                 SetPedIntoVehicle(ped, veh, -1)
                 SetModelAsNoLongerNeeded(hash)
-
-                TriggerEvent("chat:addMessage", { args = { "^1Wypadłeś poza barierę! Teleport i Shinobi." } })
             end
         end
     end
 end)
-
 
 Citizen.CreateThread(function()
     while true do
